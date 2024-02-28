@@ -57,13 +57,13 @@ limited_monkey.release(Key.enter)
 limited_monkey.press(Key.enter)
 limited_monkey.release(Key.enter)
 
-how_many_chapters=random.randint(10,22)
+how_many_chapters=random.randint(5,20) #change this variable to change amount of chapters
 chapter_count=1
 time.sleep(3)
 while chapter_count <= how_many_chapters:
     time.sleep(5)
     #print(chapter_count,"chap count")
-    random_chapter_length=random.randint(300,1050)
+    random_chapter_length=random.randint(300,500)
     monkey_limit=0
     chapter_char_num=0
     which_chapter=chapter_name[chapter_count]
@@ -95,6 +95,9 @@ while chapter_count <= how_many_chapters:
         charnum=0
         random_monkey_word= random.randint(0,21197)# The end number is the number of lines in shake.txt minus 1 line because of lists
         smallerword=randj[random_monkey_word]
+        limited_monkey.press(Key.space)
+        limited_monkey.release(Key.space)
+        time.sleep(0.1)
         try:
             while smallerword[charnum] != ' ':
                 
@@ -102,11 +105,11 @@ while chapter_count <= how_many_chapters:
                 limited_monkey.release(smallerword[charnum])
                 #print("the random is: ", random_monkey_word, "the answer is ", random_monkey_word/2)
                 
-                wordtwo= random_monkey_word%2
-                wordone= random_monkey_word%10
-                if wordtwo == 0 and wordone ==0 :
-                    limited_monkey.press(Key.space)
-                    limited_monkey.release(Key.space)
+                #wordtwo= random_monkey_word%2
+                #wordone= random_monkey_word%10
+                #if wordtwo == 0 and wordone ==0 :
+                 #   limited_monkey.press(Key.space)
+                  #  limited_monkey.release(Key.space)
                 charnum+=1
            # limited_monkey.press(Key.space)
             #limited_monkey.release(Key.space)
